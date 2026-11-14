@@ -6,6 +6,10 @@ model-viewer {
   margin: 0 auto;
 }
 
+#tablet-desktop-con {
+  display: none;
+}
+
  .HotspotAnnotation img {
     width: 100px;
     margin-bottom: 20px;
@@ -90,6 +94,14 @@ model-viewer {
 
   @media screen and (min-width: 768px) {
 
+    #tablet-desktop-con {
+      display: block;
+    }
+
+    .mobile-con {
+      display: none;
+    }
+    
     model-viewer {
   width: auto;
   max-width: 1200px;
