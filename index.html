@@ -8,7 +8,7 @@
     <title>Bluetooth Speaker</title>
 </head>
 <body>
-    <div class="grid-con center-grid-con">
+    <div class="grid-con center-grid-con" id="tablet-desktop-con">
         <section class="col-span-full">
              <h1 class="hidden">Bluetooth Speaker AR</h1>
             <model-viewer src="model/clarke_jake_bluetooth_speaker-compressed.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="images/poster.webp" shadow-intensity="1.7" shadow-softness="0.78">
@@ -24,6 +24,39 @@
 </model-viewer>
         </section>
     </div>
+
+    <div class="grid-con center-grid-con mobile-con">
+        <section class="col-span-full">
+            <h2 class="hidden">Bluetooth Speaker Mobile</h2>
+            <img src="images/poster.webp" alt="Bluetooth Speaker">
+        </section>
+
+           <div class="col-span-full">
+                <img src="images/volume.svg" alt="volume icon" class="icon-svg">
+                <h2 class="mobile-title">Powerful High Quality Speakers</h2>
+                <p>Powerful, clear, balanced and high-fidelity Audio with deep bass that you can easily take anywhere with you. With our new technology, no matter the position you lay the speaker in, our Speaker will automatically adjust for the orientation to play the best possible sound. Crystal clear sound quality with no draw backs, and easy to take anywhere with you.</p>
+            </div>
+
+            <div class="col-span-full">
+                <img src="images/usb.svg" alt="usb icon" class="icon-svg">
+                <h2 class="mobile-title">Multiple USB Ports and Headphone Jack</h2>
+                <p>Our Speaker offers a variety of input interfaces for versatile connectivity. Multiple USB ports that match any and all kinds of phone chargers and finally a headphone jack if you wish to connect in any kind of environment, inside or outside.</p>
+            </div>
+
+            <div class="col-span-full">
+                <img src="images/mirror.svg" alt="symmetry icon" class="icon-svg">
+                <h2 class="mobile-title">Outercasing That Matches All Décor</h2>
+                <p>Neutral coloured outer casing that you can have come in any colour so it easily blends into your home interior without fearing it will stand out against your own personal style, easy to take anywhere with you without worrying about it catching attention.</p>
+            </div>
+            <div class="col-span-full">
+                <img src="images/umbrella.svg" alt="waterproof icon" class="icon-svg">
+                <h2 class="mobile-title">Waterproof Speaker Casing</h2>
+                <p>Waterproof casing to protect your speaker from any and all kinds of spill. The waterproof casing guarantees your speakers safety and ensures any accidentally drops into the pool will keep it functioning, even underwater. Perfect for having your speaker sit on a floatie during a pool party.</p>
+            </div>
+    </div>
+
+
+
      <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.4.0/model-viewer.min.js"></script>
      <script src="js/main.js"></script>
 </body>
