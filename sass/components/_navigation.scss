@@ -1,0 +1,32 @@
+#main-nav  ul li {
+    list-style: none;
+    a {
+        text-decoration: none;
+         color: rgb(54, 54, 54);
+         }
+    }
+
+
+header nav ul li {
+      display: inline;
+      font-size: 20px;
+      padding: 1rem;
+}
+
+#main-nav a:hover {
+     color: #e2561e;
+}
+
+nav {
+    border-bottom: solid 1px #e2561e;
+    margin-top: 20px;
+}
+
+.brand-name {
+    margin-top: 10px;
+    padding: 10px;
+}
+
+header {
+    margin-bottom: 30px;
+}
