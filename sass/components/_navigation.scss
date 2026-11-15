@@ -17,7 +17,7 @@ header nav ul li {
      color: #e2561e;
 }
 
-nav {
+header nav {
     border-bottom: solid 1px #e2561e;
     margin-top: 20px;
 }
@@ -29,4 +29,18 @@ nav {
 
 header {
     margin-bottom: 30px;
+}
+
+#footer-nav {
+    ul li {
+         list-style-type: none;
+         margin-top: 20px;
+    }
+    a {
+        text-decoration: none;
+        color: white;
+    }
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px 10px;
 }

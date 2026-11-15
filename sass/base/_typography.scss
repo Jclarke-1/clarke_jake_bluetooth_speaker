@@ -1,10 +1,12 @@
 p {
   color: rgb(54, 54, 54);
   line-height: 18px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+   text-align: left;
 }
 
-h2 {
+h2, h3 {
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 20px;
@@ -14,4 +16,14 @@ body {
   font-size: 15px;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 400;
+}
+
+h3 {
+  margin-top: 19px;
+   text-align: center;
+}
+
+h4 {
+  text-align: center;
+  margin-top: 20px;
 }
