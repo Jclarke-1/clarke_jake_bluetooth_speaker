@@ -1,6 +1,7 @@
 
 (() =>{
-
+  gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollToPlugin);
   //variables
     const hotspots = document.querySelectorAll(".Hotspot");
     const canvas = document.querySelector("#explode-view");
@@ -14,6 +15,7 @@
     }
     const divisor = document.querySelector("#divisor");
     const slider = document.querySelector("#slider");
+    const mainNav = document.querySelectorAll("#main-nav nav ul li a");
 
 
     const infoBoxes = [
@@ -39,6 +41,8 @@
       }
     ]
 
+
+    // functions
     function loadInfo() {
         infoBoxes.forEach((infoBox, index) =>{
            let selected = document.querySelector(`#hotspot-${index+1}`);
@@ -73,13 +77,10 @@
         trigger: "#explode-view",
         pin: true,
         start: "top top",
-        scrub: 1,
-        markers: true
+        scrub: 1
       },
       onUpdate: render
     });
-
-  //functions
 
     function render() {
        context.clearRect(0, 0, canvas.width, canvas.height);
@@ -94,11 +95,26 @@
       slider.value = "55%";
     }
 
+    function linkScroll(e) {
+      e.preventDefault();
+      console.log(e.currentTarget.hash);
+      let selectedLink = e.currentTarget.hash;
+       gsap.to(window, 
+        { duration: 1.5, 
+          scrollTo: { y: `${selectedLink}`, 
+          offsetY: 100 } 
+      });
+    }
+
     //event listeners
 
     images[0].addEventListener("load", render);
     slider.addEventListener("input", moveDivisor);
     window.addEventListener("load", resetSlider);
+    mainNav.forEach((link) => {
+       link.addEventListener("click", linkScroll);
+    }
+    )
 
 
 })();
