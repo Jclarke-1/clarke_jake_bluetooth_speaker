@@ -1,6 +1,7 @@
 
 (() =>{
 
+  //variables
     const hotspots = document.querySelectorAll(".Hotspot");
     const canvas = document.querySelector("#explode-view");
     const context = canvas.getContext("2d");
@@ -11,6 +12,8 @@
     const speaker = {
       frame: 0
     }
+    const divisor = document.querySelector("#divisor");
+    const slider = document.querySelector("#slider");
 
 
     const infoBoxes = [
@@ -76,11 +79,26 @@
       onUpdate: render
     });
 
-    images[0].addEventListener("load", render);
+  //functions
 
     function render() {
        context.clearRect(0, 0, canvas.width, canvas.height);
        context.drawImage(images[speaker.frame], 0, 0);
     }
+    
+    function moveDivisor() {
+      divisor.style.width = `${slider.value}%`
+    }
+
+    function resetSlider() {
+      slider.value = "55%";
+    }
+
+    //event listeners
+
+    images[0].addEventListener("load", render);
+    slider.addEventListener("input", moveDivisor);
+    window.addEventListener("load", resetSlider);
+
 
 })();
