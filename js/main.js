@@ -2,6 +2,17 @@
 (() =>{
 
     const hotspots = document.querySelectorAll(".Hotspot");
+    const canvas = document.querySelector("#explode-view");
+    const context = canvas.getContext("2d");
+    canvas.width = 1280;
+    canvas.height = 720;
+    const frameCount = 416;
+    const images = [];
+    const speaker = {
+      frame: 0
+    }
+
+
     const infoBoxes = [
       {
         image: 'images/volume.svg',
@@ -44,5 +55,32 @@
         });
     }
     loadInfo();
+
+    for(let i = 0; i < frameCount; i++) {
+      const img = new Image();
+      img.src = `images/animation${(i + 1).toString().padStart(4, '0')}.webp`;
+      images.push(img);
+    }
+  
+    gsap.to(speaker, {
+      frame: frameCount - 1,
+      ease: "none",
+      snap: "frame",
+      scrollTrigger: {
+        trigger: "#explode-view",
+        pin: true,
+        start: "top top",
+        scrub: 1,
+        markers: true
+      },
+      onUpdate: render
+    });
+
+    images[0].addEventListener("load", render);
+
+    function render() {
+       context.clearRect(0, 0, canvas.width, canvas.height);
+       context.drawImage(images[speaker.frame], 0, 0);
+    }
 
 })();
